@@ -1,0 +1,16 @@
+.testimonial_cont{width:100%; height:auto; min-height:300px; background:#000000; padding-top:0px; position:relative;}
+.testimonial{background: #0096D6; height: 400px; overflow: visible;}
+.brandlogo{background: #ffffff; height:400px; }
+.brandlogos{background: #EFEFEF; height:150px; overflow: hidden;}
+.brandlogos .col-lg-10{background:none !important;}
+.arrow_down {width: 0; height: 0; border-bottom: 30px solid transparent; border-right: 30px solid transparent;border-left: 30px solid #0096D6; position: absolute; margin-left:200px; z-index:100;  }
+.test-prev,.test-next{width: 30px; height: 56px; position: absolute; background-repeat: none; background-image: url(../images/sprites-ui@1x.png); z-index:100; cursor: pointer;}
+.test-prev{ background-position: -187px -257px; left: 30px; opacity: .8;
+    top: 50.5%;}
+.test-next{ background-position: -273px -256px; right: 30px; opacity: .8;  top: 50.5%; }
+.testimonial_text{font-family: "Lato-Light"; color: #fff; font-size: 40px; letter-spacing: 1.5px; line-height: normal; text-align: center; top:12%; left:8%; height:auto;}
+.testimonial_by{font-size:24px; font-weight:bold; color:#ffffff; text-align: center; left:8%; top:30%;}
+.logobig{height:200px; top:30%; text-align: center;}
+.bottom_logo{width:210px; height:150px; float: left; text-align:center; line-height:150px; margin-top:30px;}
+.bottom_logo img{width:40%; height: auto; filter: grayscale(1);}
+.bx-wrapper .bx-viewport { background:none !important; border:none !important; box-shadow:none !important;}

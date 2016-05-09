@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Testomonial Slider</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/testimonial.css" rel="stylesheet" />
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+
+
+
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head> 
+<body class="homepage">
+
+<section class="testimonial_cont">
+	<div class="test-prev"></div>
+	<div class="test-next"></div>
+	<div class="col-lg-6 testimonial">
+		<div class="testimonial_text col-lg-10"></div>
+		<div class="col-lg-10 testimonial_by"></div>
+		
+	</div>
+	<div class="col-lg-6 brandlogo">
+		<div class="col-lg-12 logobig"><img src="" /></div>
+	</div>
+	<div class="col-lg-12 brandlogos">
+		<div class="arrow_down"></div>
+		<div class="col-lg-10" style="margin-left:8%;">
+			
+		</div>
+	</div>
+</section>
+
+
+<script src="js/bootstrap.js"></script>
+
+<script src="js/jquery-2.1.3.min.js"></script>
+
+<script src="js/jquery.bxslider.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+//var bgcolor = ["#0096D6","#F57B21","#7BBD3F","#1B5C80","#616161"];
+var bgcolor = [
+{
+	bgcolor: '#0096D6',
+	testimonial: 'this is the testimonial text for the user 1. You can change it from JS array', 
+	name: 'name testi 1', 
+	logo: 'images/logo-brand-hp.png'
+},
+{
+	bgcolor: '#F57B21',
+	testimonial: 'this is the testimonial text for the user 2. Lorem ipsum is the dummy text.', 
+	name: 'name testi 2', 
+	logo: 'images/logo-brand-ginger.png'
+},
+{
+	bgcolor: '#7BBD3F',
+	testimonial: 'this is the testimonial text for the user 3. Lorem ipsum is the dummy text.', 
+	name: 'name testi 3', 
+	logo: 'images/logo-brand-odx.png'
+},
+{
+	bgcolor: '#1B5C80',
+	testimonial: 'this is the testimonial text for the user 4. Lorem ipsum is the dummy text.', 
+	name: 'name testi 4', 
+	logo: 'images/logo-brand-vogue.png'
+},
+{
+	bgcolor: '#616161',
+	testimonial: 'this is the testimonial text for the user 5. Lorem ipsum is the dummy text.', 
+	name: 'name testi 5', 
+	logo: 'images/logo-brand-hp.png'
+}
+];	    
+
+
+
+var i;
+var current = 0;
+var logos = '';
+var interval = 2000;
+for(i=0;i<bgcolor.length;i++){
+	logos +='<div class="bottom_logo"><img src="'+bgcolor[i]['logo']+'" /></div>';
+}
+$('.brandlogos > .col-lg-10').html(logos);
+bg_changer(bgcolor, interval);
+function bg_changer(color_array, millisecond) {
+  	
+  	
+  	setInterval(function() {
+		
+		current = i++;
+	    
+	    $('.testimonial').css("background-color", color_array[(current) % color_array.length]['bgcolor']);
+	    $('.arrow_down').css("border-left", "30px solid "+color_array[(current) % color_array.length]['bgcolor']);
+	    $('.testimonial > .testimonial_text').text(color_array[(current) % color_array.length]['testimonial']);
+	    $('.testimonial > .testimonial_by').text(color_array[(current) % color_array.length]['name']);
+	    $('.logobig > img').attr('src',color_array[(current) % color_array.length]['logo']);
+	   	//$(".bottom_logo").animate({marginLeft : "-220px"}, 500);
+	   	$(".bottom_logo").scrollLeft(300);
+  	}, millisecond);
+}
+
+$('.test-prev').click(function(){
+	i = current - 1;
+	bg_changer(bgcolor,interval);
+});	
+
+$('.brandlogos > .col-lg-10').bxSlider({
+    slideWidth: 220,
+    minSlides: 2,
+    maxSlides: 3,
+    moveSlides: 1,
+    slideMargin: 10,
+    auto: true,
+    pause: 2000,
+    maxSlides:5,
+    autoDelay:2000
+  });
+});
+</script>
+
+</body>
+</html>
